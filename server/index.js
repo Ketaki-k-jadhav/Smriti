@@ -7,11 +7,12 @@ import postRoutes from './routes/posts.js';
 
 const app=express();
 
-app.use('/posts',postRoutes);   //this means every route inside the postRoutes will start from posts.js
 
 app.use(bodyParser.json({limit:"30mb",extended:true}));
 app.use(express.urlencoded({limit:"30mb",extended:true}));
 app.use(cors());
+
+app.use('/posts',postRoutes);   //this means every route inside the postRoutes will start from posts.js
 
 const MONGODB_CONNECTION_URL="mongodb+srv://ketaki:smriti%2367@cluster0.3k6kprv.mongodb.net/?retryWrites=true&w=majority";  //url encoding for replacing # in password to %23
 const PORT=process.env.PORT || 5000;
