@@ -1,4 +1,4 @@
-import PostMessage from '../models/postMessage,js';
+import PostMessage from '../models/postMessage.js';
 
 //retrieving data from database takes some time so this is an asynchronous function
 export const getPosts=async(req,res) => {
